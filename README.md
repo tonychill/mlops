@@ -64,6 +64,30 @@ Machine learning is not a separate industry, instead, it's a powerful way of thi
 
 Be sure to go through the [course](https://madewithml/#course) for a much more detailed walkthrough of the content on this repository. We will have instructions for both local laptop and Anyscale clusters for the sections below, so be sure to toggle the ► dropdown based on what you're using (Anyscale instructions will be toggled on by default). If you do want to run this course with Anyscale, where we'll provide the **structure**, **compute (GPUs)** and **community** to learn everything in one day, join our next upcoming live cohort → [sign up here](https://4190urw86oh.typeform.com/madewithml)!
 
+### Remote SSH Development
+
+1. **Install VSCode Remote - SSH extension**: `Extensions > Search 'Remote - SSH' > Install`
+2. **Configure SSH config file** (`~/.ssh/config`):
+   ```ssh_config
+   Host ml-server
+     HostName <remote-ip>
+     User <username>
+     IdentityFile ~/.ssh/id_rsa
+   ```
+3. **Connect**: `Remote-SSH: Connect to Host` > select your config
+4. **Install ML dependencies** on remote:
+   ```bash
+   sudo apt update && sudo apt install python3.10
+   pip install tensorflow torch scikit-learn
+   ```
+
+## Cloud Resources
+- **AWS**: g4dn (GPU), p3 (GPU)
+- **GCP**: A2 (TPU), n1 (GPU)
+- **Azure**: NDv4 (GPU)
+
+> Use `nvidia-smi` to verify GPU availability after connecting. For TPU access on GCP, ensure credentials are configured.
+
 ### Cluster
 
 We'll start by setting up our cluster with the environment and compute configurations.

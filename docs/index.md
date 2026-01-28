@@ -1,6 +1,7 @@
 ## Documentation
 
 - [madewithml](madewithml/data.md): documentation.
+- [Remote Development Setup](remote-development-setup.md): Guide for setting up VS Code to SSH into the remote development server.
 
 ## Lessons
 
